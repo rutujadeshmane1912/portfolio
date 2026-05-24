@@ -1,0 +1,1141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+      background-color: rgb(33, 3, 33);
+      margin-left: 11%;
+      margin-right: 11%;
+     
+      color: white;
+}
+
+.logo img {
+    width: 60px; /* 100px navbar के हिसाब से थोड़ा बड़ा हो सकता है */
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 5%;  */
+    background-color: rgb(33, 3, 33);
+    
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: white; /* डार्क बैकग्राउंड पर सफेद अच्छा दिखेगा */
+    font-size: 20px; 
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+.hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 1; /* ताकि यह हमेशा ऊपर रहे */
+}
+
+.line {
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    margin: 7px;
+   
+}
+
+/* Base Layout */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10%;
+  gap: 50px;
+  
+  overflow: hidden; /* Animations smooth dikhne ke liye */
+}
+
+/* Image Container with Entrance Animation */
+.home1 img {
+  width: 320px;
+  height: 320px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+  object-fit: cover;
+  border: 4px solid #646cff;
+  animation: profile_blob 8s ease-in-out infinite, fadeInRight 1s ease-out;
+  transition: transform 0.5s ease;
+}
+
+.home1 img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Text Content Animation */
+.home3 {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.home3 h5 {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.home3 h2 {
+  font-size: 3.5rem;
+  margin: 0;
+  background: linear-gradient(90deg, #646cff, #ff4646);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text effect */
+}
+
+.home3 h3 {
+  font-size: 1.8rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* Button Transitions */
+button {
+  padding: 12px 30px;
+  margin-right: 15px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:first-of-type {
+  background-color: #646cff;
+  color: white;
+}
+
+button:last-of-type {
+  background-color: transparent;
+  border: 2px solid #646cff;
+  color: #646cff;
+}
+
+button:hover {
+  letter-spacing: 1px;
+  box-shadow: 0 8px 20px rgba(100, 108, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+/* --- KEYFRAMES --- */
+
+/* Text Left se aayega */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Image Right se aayegi */
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Continuous Blob Shape Animation */
+@keyframes profile_blob {
+  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+}
+
+     
+
+/* Container Background & Spacing */
+.About {
+  padding: 100px 10%;
+  
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.About h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  color: #c1afaf;
+  font-weight: 700;
+}
+
+/* Flex Wrapper */
+.about0 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Image Container with Animation */
+.about1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: slideLeft 1s ease-out;
+}
+
+.about1 img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  filter: grayscale(30%);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 15px 15px 0px #646cff; /* Theme color shadow */
+}
+
+.about1 img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03) rotate(-2deg);
+  box-shadow: -15px 15px 0px #ff4646; /* Color switch on hover */
+}
+
+/* Text Content Area */
+.about2 {
+  flex: 1.5;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.about2 h5 {
+  font-size: 1.1rem;
+  color: #646cff;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.about2 h2 {
+  text-align: left; /* Reset center for flex item */
+  font-size: 2.5rem;
+  margin: 0;
+  color: #104623;
+  margin-bottom: 5px;
+}
+
+.about2 h3 {
+  font-size: 1.5rem;
+  color: #f14242;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.about3 {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  border-left: 4px solid #646cff;
+  padding-left: 20px;
+  background: rgba(100, 108, 255, 0.05);
+  padding: 20px;
+  border-radius: 0 15px 15px 0;
+  transition: background 0.3s ease;
+}
+
+.about3:hover {
+  background: rgba(100, 108, 255, 0.1);
+}
+
+/* --- Keyframe Animations --- */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Media Queries --- */
+
+
+/* Container Layout */
+.education-section {
+  padding: 80px 10%;
+  
+  text-align: center;
+}
+
+.edu{
+    color: #b23c83;
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.education-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Taaki mobile par cards ek ke niche ek aayein */
+  margin-top: 40px;
+  
+}
+
+/* Individual Card Styling */
+.edu-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease backwards;
+}
+
+/* Delay for each card animation */
+.edu-card:nth-child(1) { animation-delay: 0.2s; }
+.edu-card:nth-child(2) { animation-delay: 0.4s; }
+.edu-card:nth-child(3) { animation-delay: 0.6s; }
+
+.edu-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(100, 108, 255, 0.15);
+  border-color: #646cff;
+}
+
+/* Icon or Year Styling */
+.edu-year {
+  display: inline-block;
+  padding: 5px 15px;
+  background: #646cff;
+  color: white;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.edu-card h3 {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.edu-card h4 {
+  font-size: 1rem;
+  color: #646cff;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.edu-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Entrance Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .education-container {
+    gap: 20px;
+  }
+  .edu-card {
+    width: 100%; /* Mobile par full width */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Responsive Media Query --- */
+
+@media screen and (max-width: 900px) { /* 1795px बहुत ज्यादा है, इसे 900px के आसपास रखें */
+    .hamburger {
+        display: block;
+       
+    }
+
+    .navbar {
+        flex-direction: column; /* मोबाइल पर सामान ऊपर-नीचे आएगा */
+           
+    }
+
+    .nav-link {
+       display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* width: 100%; */
+        padding-bottom: 20px;
+         transition: all  0.9s ease-out; 
+    }
+
+    .nav-link a {
+        margin: 15px 0; /* मोबाइल पर ऊपर-नीचे गैप */
+    }
+
+    /* JS जब ये क्लास हटाएगा/जोड़ेगा */
+     .v-class-resp {
+       opacity: 0;
+    }
+
+    .h-nav-resp {
+        height: 72px;
+    } 
+/* }
+@media screen and (max-width: 900px) { */
+  .home {
+    flex-direction: column-reverse; /* Mobile par text pehle dikhega */
+    text-align: center;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  .home1 img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .home3 h2 {
+    font-size: 2.5rem;
+  }
+  
+  button {
+    margin: 10px 5px;
+    width: 80%; /* Mobile par bade buttons */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about0 {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about2 h2 {
+    text-align: center;
+  }
+
+  .about3 {
+    border-left: none;
+    border-top: 4px solid #646cff;
+    padding-left: 10px;
+  }
+
+  .about1 img {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .About {
+    padding: 60px 5%;
+  }
+
+  .about2 h2 {
+    font-size: 2rem;
+  }
+
+  .about2 h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+/* Main Home Container */
+.home , .About ,.education-section , .skills-section ,.contact-section ,.container{
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10%;
+  gap: 50px;
+ 
+  margin-top: 20px;
+  /* 3D Base Setup */
+  
+  border-radius: 20px;
+  
+  /* Perspecive property parent par ya khud par 3D depth ke liye */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  /* Initial Shadow: Subtle depth */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+  /* Transition: All properties smooth honi chahiye */
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 3D Hover State */
+.home:hover ,.About:hover,.education-section:hover ,.skills-section:hover ,.contact-section:hover ,.container:hover{
+  /* Gray Border subtle rakhein */
+  border: 1px solid #ccc;
+  
+  /* 3D Transform: Rotate aur Translate dono use karenge */
+  /* rotateX se card niche se uthega, rotateY se side se */
+  transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);
+  
+  /* 3D Deep Shadow: Isse 'Floating' look aata hai */
+  box-shadow: 
+    20px 20px 60px rgba(0, 0, 0, 0.1), 
+    -5px -5px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Internal elements ko bhi thoda lift dene ke liye (Optional) */
+.home:hover .home1, 
+.home:hover .home3 {
+  transform: translateZ(50px); /* Content image se bhi thoda upar lagega */
+  transition: transform 0.5s;
+}
+
+/* Mobile responsive fixes */
+@media screen and (max-width: 900px) {
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 30px 15px;
+    /* Mobile par 3D effect thoda kam rakhein taaki scroll mein issue na ho */
+    transform: none !important; 
+  }
+  
+  .home:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+}   
+
+
+
+/* about */
+
+
+/* About Container Base */
+.About {
+  padding: 80px 10%;
+  
+  
+  /* 3D Space Setup */
+  perspective: 1000px;
+}
+
+/* Internal Wrapper (about0) par hover effect lagayenge */
+.about0 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  
+  /* Initial Border & Shadow */
+  border: 1px solid transparent;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+/* Hover State */
+.about0:hover {
+  /* Gray Border */
+  border: 1px solid #ccc;
+  
+  /* 3D Tilt Effect */
+  transform: rotateY(5deg) rotateX(2deg) translateY(-10px);
+  
+  /* Deep 3D Shadow */
+  box-shadow: 
+    -20px 20px 50px rgba(0, 0, 0, 0.1), 
+    10px -10px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Image Styling */
+.about1 img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  transition: transform 0.5s;
+}
+
+/* Hover par image thodi aur bahar nikal kar aayegi */
+.about0:hover .about1 img {
+  transform: translateZ(50px); 
+}
+
+/* Text Content */
+.about2 {
+  flex: 1.5;
+  transition: transform 0.5s;
+}
+
+.about0:hover .about2 {
+  transform: translateZ(30px);
+}
+
+/* --- Responsive Fixes --- */
+
+@media screen and (max-width: 992px) {
+  .about0 {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  /* Mobile par 3D effect simplify kar dein taaki user experience kharab na ho */
+  .about0:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  }
+  
+  .about0:hover .about1 img,
+  .about0:hover .about2 {
+    transform: none;
+  }
+}
+
+
+
+
+
+
+.skills-section {
+    padding: 80px 10%;
+    text-align: center;
+   
+    perspective: 1000px;
+}
+
+.skills-heading {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #91a5e8;
+}
+
+/* Grid setup: Desktop par 3 cards */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 20px;
+    border: 1px solid #eee;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Icon Styling */
+.skill-card i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 10px;
+}
+
+/* 3D Hover Effect */
+.skill-card:hover {
+    border-color: #ccc;
+    transform: rotateY(10deg) rotateX(5deg) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card:hover i {
+    transform: translateZ(50px) scale(1.1);
+}
+
+.skill-card:hover h3 {
+    transform: translateZ(30px);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets: 2 cards per row */
+@media screen and (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile: 1 card per row */
+@media screen and (max-width: 600px) {
+    .skills-section {
+        padding: 50px 5%;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile par 3D tilt thoda kam rakhein */
+    .skill-card:hover {
+        transform: translateY(-8px);
+    }
+}
+
+
+ 
+
+
+
+/* CONTACT SECTION */
+
+.contact-section{
+    width: 100%;
+    min-height: 100vh;
+    /* background: #111827; */
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-heading{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.contact-heading::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #00bcd4;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.contact-container{
+    width: 100%;
+    max-width: 700px;
+    /* background: rgba(255,255,255,0.05); */
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 1s ease;
+}
+
+.contact-form{
+    width: 100%;
+}
+
+.input-box{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input,
+.input-box textarea{
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #444;
+    background: transparent;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+.input-box textarea{
+    resize: none;
+}
+
+.input-box label{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #bbb;
+    pointer-events: none;
+    transition: 0.4s;
+    background: #111827;
+    padding: 0 5px;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+    border-color: #00bcd4;
+    box-shadow: 0 0 15px rgba(0,188,212,0.4);
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label{
+    top: -10px;
+    left: 12px;
+    font-size: 13px;
+    color: #00bcd4;
+}
+
+.contact-btn{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: linear-gradient(45deg,#00bcd4,#007bff);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    font-weight: bold;
+}
+
+.contact-btn:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,188,212,0.4);
+}
+
+.contact-btn:active{
+    transform: scale(0.98);
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .contact-container{
+        padding: 25px;
+    }
+
+    .contact-heading{
+        font-size: 32px;
+    }
+
+}/* FOOTER SECTION */
+
+.footer{
+    width: 100%;
+    /* background: #0f172a; */
+    color: white;
+    padding-top: 50px;
+    margin-top: 50px;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 10%;
+}
+
+.footer-logo h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #00bcd4;
+}
+
+.footer-logo p{
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+.footer-links{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.footer-links a::after{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #00bcd4;
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: #00bcd4;
+}
+
+.footer-links a:hover::after{
+    width: 100%;
+}
+
+.footer-social{
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a{
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.footer-social a:hover{
+    background: #00bcd4;
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 8px 20px rgba(0,188,212,0.4);
+}
+
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    padding: 20px 10px;
+}
+
+.footer-bottom p{
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .footer-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links{
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+/* ================= PROJECT SECTION ================= */
+
+.container{
+    width: 100%;
+    padding: 50px 5%;
+    display: grid;
+
+    /* Responsive Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+    justify-content: center;
+}
+
+/* CARD */
+
+.card{
+    background: rgba(248, 247, 247, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.5s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* HOVER */
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0,188,212,0.3);
+}
+
+/* IMAGE */
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card:hover img{
+    transform: scale(1.05);
+}
+
+/* CONTENT */
+
+.content{
+    padding: 20px;
+}
+
+.content h3{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.content p{
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+
+.content a{
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+
+    background: linear-gradient(45deg,#00bcd4,#007bff);
+
+    color: white;
+    font-weight: bold;
+
+    display: inline-block;
+
+    transition: 0.4s;
+}
+
+.content a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,188,212,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .container{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .container{
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .card{
+        max-width: 100%;
+    }
+
+    .content h3{
+        font-size: 22px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .card img{
+        height: 180px;
+    }
+
+    .content{
+        padding: 15px;
+    }
+
+    .content h3{
+        font-size: 20px;
+    }
+
+    .content p{
+        font-size: 14px;
+    }
+
+    .content a{
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+
